@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Guess {
+	public static void main(String[] args) {
+
+		Scanner myScanner = new Scanner(System.in);
+		System.out.println("请您定义数字的最大值a");
+		int a = myScanner.nextInt();
+		int i = (int)(0 + Math.random()*(a-0+1));
+		System.out.println("请输入一个到您设定上限以内的0或正整数");
+
+		int num1 = myScanner.nextInt();;
+		if(num1 <= a ) {
+			while(true) {
+				int num2 = myScanner.nextInt();
+				if (num2 < i) {
+				System.out.println("小了");
+				System.out.println("请重新输入数字");
+				} else if (num2 > i){
+				System.out.println("大了");
+				System.out.println("请重新输入数字");
+				} else {
+				System.out.println("恭喜您猜对了！数字为" + i);
+				}	
+			}
+		} else {
+			System.out.println("输入有误！请重新输入！");	
+		  }
+	}
+}
